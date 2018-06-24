@@ -1,0 +1,132 @@
+@font-face {
+  	font-family: 'digital-7';
+  	font-style: normal;
+	font-weight: 400;
+  	src: url('../font/digital-7.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('../font/digital-7.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../font/digital-7.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../font/digital-7.tff')  format('truetype'), /* Safari, Android, iOS */
+       url('../font/digital-7.svg') format('svg'); /* Legacy iOS */
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-weight: bold;
+	font-size: 50px;
+	font-family: 'digital-7', sans-serif;
+}
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #f5f8fa;
+}
+.calculator {
+	position: relative;
+	border: solid 1px #d4d4d4;
+	height: 750px;
+	width: 600px;
+	padding-top: 30px;
+	box-sizing: content-box;
+	border-radius: 2%;
+	background: #f0f0f0;
+}
+.displaybox {
+	position: relative;
+}
+.display {
+	border: solid 1px #d4d4d4;
+	height: 100px;
+	margin: 40px 30px 0;
+	background: white;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 10px;
+	font-size: 1.2em;
+}
+.operator {
+	position: absolute;
+	left: 35px;
+	top: 15px;
+	font-size: 1.5em;
+}
+.buttons {
+	height: 515px;
+	margin: 40px 30px 0;
+	display: grid;
+	grid: repeat(4,1fr) / repeat(5,1fr);
+	grid-template-areas:
+    	"clear oper1 oper2 oper3 oper4"
+    	"num num num equal equal"
+    	"num num num zero deci"
+		"num num num zero back";
+	grid-gap: 5px;
+	background-color: #f0f0f0;
+}
+.buttons button {
+	border: none;
+	background-color:#fbfbfb;
+	color:#454545;
+	border-radius: 7%;
+}
+.buttons button:focus{outline: none;}
+.buttons button:hover{background: #dddddd;}
+.buttons button:active{background: #bfbfbf;}
+
+.numbers {
+	grid-area: num;
+	display: grid;
+	grid: repeat(3,1fr) / repeat(3,1fr);
+	grid-gap: 5px;
+}
+.zero {	grid-area: zero;}
+.equal {grid-area: equal;}
+.decimal {grid-area: deci;}
+
+#clear {
+	grid-area: clear;
+	background-color:#e82e2e;
+	color:white;
+}
+#clear:hover {background-color:#c92626;}
+#clear:active {background-color:#b41515;}
+
+#backspace {
+	grid-area: back;
+	background:#e0670e;
+	color: black;
+}
+#backspace:hover {background:#cc5700;}
+#backspace:active {background:#b74d00;}
+
+.plus,.minus,.multiple,.divide {font-size: 1.2em;}
+.plus {grid-area: oper1;}
+.minus {grid-area: oper2;}
+.multiple {grid-area: oper3;}
+.divide {grid-area: oper4;}
+
+.githubicon{
+    background-image: url("https://image.flaticon.com/icons/png/512/3/3641.png");
+    background-size: 30px;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    opacity: 0.9;
+}
+.githubicon:hover{
+    background-size: 35px;
+	right: 3px;
+    bottom: 3px;
+    opacity: 1;
+}
+.githubicon:active{
+    background-size: 40px;
+    right: 5px;
+    bottom: 5px;
+}
